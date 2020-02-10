@@ -10,28 +10,23 @@ moment.locale("en-GB");
 BigCalendar.momentLocalizer(moment);
 const events=[
   {
-    'title': 'All Day Event very long title',
+    'title': 'Fast & Furious Presents: Hobbs & Shaw',
     'allDay': true,
-    'start': new Date(2020, 3, 0),
-    'end': new Date(2020, 3, 1)
+    'start': new Date(2020, 1, 10),
+    'end': new Date(2020, 2, 10)
   },
   {
-    'title': 'Long Event',
-    'start': new Date(2020, 1, 7),
-    'end': new Date(2020, 1, 10)
+    'title': 'Saaho',
+    'start': new Date(2020, 1, 10),
+    'end': new Date(2020, 1, 12)
   },
 
   {
-    'title': 'DTS STARTS',
-    'start': new Date(2020, 1, 13, 0, 0, 0),
+    'title': 'The Lion King',
+    'start': new Date(2020, 1, 10, 0, 0, 0),
     'end': new Date(2020, 1, 20, 0, 0, 0)
   },
 
-  {
-    'title': 'DTS ENDS',
-    'start': new Date(2020, 1, 6, 0, 0, 0),
-    'end': new Date(2020, 1, 13, 0, 0, 0)
-  },
 ]
 class Calender extends Component {
   constructor(props) {
@@ -48,6 +43,7 @@ class Calender extends Component {
     fetch("http://localhost:8081/api/shows") 
     .then(response =>  response.json())
     .then(resData => {
+
        this.setState({ person: resData.data }, _ => console.log(this.state.person)); //this is an asynchronous function
     })
   }
@@ -57,6 +53,7 @@ componentDidMount() {
 
 
   render() {
+
     return (
       <div style={{ height: 700 }}>
         <BigCalendar

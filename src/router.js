@@ -12,7 +12,6 @@ const Main = () => (
   <Switch>
   <Route exact path="/"/>
     <Route path="/shows" component={Calender}/>
-    {/* <Route path="/aboutme" component={Aboutme}/> */}
  
  </Switch>
  </BrowserRouter>
